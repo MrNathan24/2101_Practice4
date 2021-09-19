@@ -16,8 +16,10 @@ CircularArrayQueue create_array_queue(){
  *  \param list The queue that needs to be initialize.
 */
 void init_array_queue(CircularArrayQueue *list){
-    list->front = 0;
-    list->rear = MAX-1;
+  int x;
+
+  list->front = 0;
+  list->rear = MAX-1;
 }
 
 /** \fn bool enqueue(CircularArrayQueue *list, Type p);
