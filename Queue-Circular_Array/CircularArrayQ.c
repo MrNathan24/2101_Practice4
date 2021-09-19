@@ -26,7 +26,13 @@ void init_array_queue(CircularArrayQueue *list);
  *  \param p The person to be added in the queue.
 */
 bool enqueue(CircularArrayQueue *list, Type p){
-
+    int retval = 0;
+    if(!is_full(*list)){
+        list->data[list->rear] = p;
+        list->rear = (list->rear+1) % MAX;
+        retval = 1;
+    }
+    return retval;
 }
 
 /** \fn bool dequeue(CircularArrayQueue *list);
