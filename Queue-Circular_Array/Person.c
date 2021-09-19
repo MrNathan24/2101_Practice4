@@ -89,13 +89,15 @@ void insert_after_LL(PersonLinkedList *list, Person p, String name){
 }
 
 void delete_first_LL(PersonLinkedList *list){
-    
+    PersonLinkedList *trav,temp;
+    temp = (*list)->next;
+    *list = temp->next;
+    free(temp);
 }
+
 void delete_last_LL(PersonLinkedList *list);
 void delete_by_city_LL(PersonLinkedList *list, String city); // all ocurrences
 void display_LL(PersonLinkedList list);
-
-
 
 
 /* Implement all VSpace conncept and Cusor Based List*/
