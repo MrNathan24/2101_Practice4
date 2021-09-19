@@ -4,11 +4,9 @@
 
 Person createPerson(String name, char sex, String city) {
     Person p;
-
     strcpy(p.name, name);
     p.sex = sex;
     strcpy(p.city, city);
-
     return p;
 }
 

@@ -8,10 +8,11 @@
 CircularArrayQueue create_array_queue(){
     CircularArrayQueue new;
     int x;
-    for(x = 0; x < MAX-1;x++){
-      
-    }
+    new.front = 0;
+    new.rear = MAX-1;
+    return new;
 }
+
 
 /** \fn void init_array_queue(CircularArrayQueue *list);
  *  \brief Initialize as an empty circular array queue.
@@ -24,7 +25,9 @@ void init_array_queue(CircularArrayQueue *list);
  *  \param list The current queue.
  *  \param p The person to be added in the queue.
 */
-bool enqueue(CircularArrayQueue *list, Type p);
+bool enqueue(CircularArrayQueue *list, Type p){
+
+}
 
 /** \fn bool dequeue(CircularArrayQueue *list);
  *  \brief Remove the first inserted element from the current queue. Returns true for a successful operation otherwise false.
@@ -36,16 +39,22 @@ bool dequeue(CircularArrayQueue *list);
  *  \brief Return true if the current list is empty otherwise false.
  *  \param list The current queue.
 */
-bool is_empty(CircularArrayQueue list);
+bool is_empty(CircularArrayQueue list){
+  return (list.rear + 1) % MAX == list.front;
+}
 
 /** \fn bool is_full(CircularArrayQueue list);
  *  \brief Return true if the current list is full otherwise false.
  *  \param list The current queue.
 */
-bool is_full(CircularArrayQueue list);
+bool is_full(CircularArrayQueue list){
+  return (list.rear + 2) % MAX == list.front;
+}
 
 /** \fn Type front(CircularArrayQueue list);
  *  \brief Return the person in the front without removing them.
  *  \param list The current queue.
 */
-Type front(CircularArrayQueue list);
+Type front(CircularArrayQueue list){
+  return list.data[list.front];
+}
