@@ -89,14 +89,36 @@ void insert_after_LL(PersonLinkedList *list, Person p, String name){
 }
 
 void delete_first_LL(PersonLinkedList *list){
-    PersonLinkedList *trav,temp;
+    PersonLinkedList temp;
     temp = (*list)->next;
     *list = temp->next;
     free(temp);
 }
 
-void delete_last_LL(PersonLinkedList *list);
-void delete_by_city_LL(PersonLinkedList *list, String city); // all ocurrences
+void delete_last_LL(PersonLinkedList *list){
+    PersonLinkedList *trav,temp;
+
+    for(trav = list; *trav != NULL && (*trav)->next != NULL; trav = &(*trav)->next){}
+    if(*trav != NULL){
+        temp = (*trav)->next;
+        (*trav)->next = NULL;
+        free(temp);
+    } 
+}
+void delete_by_city_LL(PersonLinkedList *list, String city){
+    PersonLinkedList *trav,temp;
+
+    for(trav = list; *trav !=  NULL && strcmp((*trav)->elem.city, city) != 0;){
+        if(*trav!= NULL){
+            temp = (*trav)->next;
+            *trav = temp->next;
+            free(temp);
+        }else{
+            trav = &(*trav)->next;
+        }
+    }
+}
+
 void display_LL(PersonLinkedList list);
 
 

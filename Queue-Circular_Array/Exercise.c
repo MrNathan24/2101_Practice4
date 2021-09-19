@@ -27,7 +27,7 @@ PersonLinkedList get_all_females(CircularArrayQueue list){
     for(x = 0; x < queueSize && list.front != (list.rear+1)%MAX; x++,list.front = (list.front+1)%MAX){
       if(list.data[list.front].sex == 'F'){
         //add to linkedlist
-        
+          
           
         } 
         
