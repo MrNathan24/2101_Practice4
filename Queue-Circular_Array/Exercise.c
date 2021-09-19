@@ -20,21 +20,20 @@ int get_queue_length(CircularArrayQueue list){
 */
 PersonLinkedList get_all_females(CircularArrayQueue list){
     PersonLinkedList femaleList = NULL,temp;
+    Person personTemp;
     int x,queueSize = get_queue_length(list);
 
-
-
-    for(x = 0; x < queueSize && list.front != (list.rear+1)%MAX; x++,list.front = (list.front+1)%MAX){
+    for(x = 0; x < queueSize; x++,list.front = (list.front+1)%MAX){
       if(list.data[list.front].sex == 'F'){
         //add to linkedlist
-          
-          
-        } 
-        
+          insert_first_LL(&femaleList,list.data[list.front]);
+          //remove from the queue and add again at the rear          
+          personTemp = front(list);
+          dequeue(&list);
+          enqueue(&list,personTemp);
       }
     }
     return femaleList;
-
 }
 
 /** \fn PersonDynamicArrayList remove_all_males(CircularArrayQueue *list);
