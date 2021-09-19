@@ -16,8 +16,6 @@ CircularArrayQueue create_array_queue(){
  *  \param list The queue that needs to be initialize.
 */
 void init_array_queue(CircularArrayQueue *list){
-  int x;
-
   list->front = 0;
   list->rear = MAX-1;
 }

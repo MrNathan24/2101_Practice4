@@ -1,5 +1,7 @@
 {
   "files.associations": {
-    "person.h": "c"
+    "person.h": "c",
+    "circulararrayq.h": "c",
+    "stdbool.h": "c"
   }
 }
