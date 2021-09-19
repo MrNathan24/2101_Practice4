@@ -306,7 +306,7 @@ void delete_first_CBL(VSpace *vs, PersonCusorBasedList *list){
     if(*list!= -1) {
         temp = *list;
         *list= vs->data[temp].next;
-        freeSpace(vs, temp);
+        free_space(vs, temp);
     }
 }
 
