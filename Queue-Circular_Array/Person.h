@@ -1,6 +1,7 @@
 #ifndef PERSON_H
 #define PERSON_H
 
+#include<stdlib.h>
 #define MAX_LIST 20
 #define MAX_VSPACE 30
 
@@ -88,6 +89,9 @@ void delete_first_LL(PersonLinkedList *list);
 void delete_last_LL(PersonLinkedList *list);
 void delete_by_city_LL(PersonLinkedList *list, String city); // all ocurrences
 void display_LL(PersonLinkedList list);
+
+
+
 
 /* Implement all VSpace conncept and Cusor Based List*/
 void init_vspace(VSpace *vs);

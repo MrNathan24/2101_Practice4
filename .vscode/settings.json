@@ -2,6 +2,7 @@
   "files.associations": {
     "person.h": "c",
     "circulararrayq.h": "c",
-    "stdbool.h": "c"
+    "stdbool.h": "c",
+    "exercise1.h": "c"
   }
 }
