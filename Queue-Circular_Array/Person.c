@@ -48,7 +48,10 @@ void insert_first_DAL(PersonDynamicArrayList *list, Person p){
         list->data = realloc(list->data, list->max);
     }
 }
-void insert_last_DAL(PersonDynamicArrayList *list, Person p);
+
+void insert_last_DAL(PersonDynamicArrayList *list, Person p){
+    
+}
 void insert_at_DAL(PersonDynamicArrayList *list, Person p, int index);
 void delete_first_DAL(PersonDynamicArrayList *list);
 void delete_last_DAL(PersonDynamicArrayList *list);
@@ -143,7 +146,11 @@ void delete_by_city_LL(PersonLinkedList *list, String city){
     }
 }
 
-void display_LL(PersonLinkedList list);
+void display_LL(PersonLinkedList list){
+    for(;list != NULL;list = list->next){
+        displayPersonInfo(list->elem);
+    }
+}
 
 
 /* Implement all VSpace conncept and Cusor Based List*/
