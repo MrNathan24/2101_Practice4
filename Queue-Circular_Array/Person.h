@@ -11,7 +11,7 @@ typedef struct {
     String name;
     char sex;
     String city;
-} Person;
+}Person;
 
 typedef struct {
     Person data[MAX_LIST];

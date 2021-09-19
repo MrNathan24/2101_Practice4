@@ -28,8 +28,26 @@ void display_SAL(PersonStaticArrayList list);
 /* Dynamic Array List - v1 
  * Doubles the maximum size of the array when full.
  */
-void init_DAL(PersonDynamicArrayList *list);
-void insert_first_DAL(PersonDynamicArrayList *list, Person p);
+void init_DAL(PersonDynamicArrayList *list){
+    list->max = MAX_LIST;
+    list->count = 0;
+    list->data = (Person *) malloc(sizeof(Person));
+}
+
+void insert_first_DAL(PersonDynamicArrayList *list, Person p){
+    int x;
+    if(list->count < list->max){
+        //shif data to the right
+        for(x = list->count; x > 0;x--){
+            list->data[x] = list->data[x-1];   
+        }
+        list->data[0] = p;
+        list->count++;
+    }else{
+        list->max *= 2;
+        list->data = realloc(list->data, list->max);
+    }
+}
 void insert_last_DAL(PersonDynamicArrayList *list, Person p);
 void insert_at_DAL(PersonDynamicArrayList *list, Person p, int index);
 void delete_first_DAL(PersonDynamicArrayList *list);
@@ -41,7 +59,13 @@ void display_DAL(PersonDynamicArrayList list);
  * Doubles the maximum size of the array when full.
  * The Dynamic Array List must also be created in the heap.
  */
-void init_DAL_2(PersonDynamicArrayList **list);
+void init_DAL_2(PersonDynamicArrayList **list){
+    (*list) = (PersonDynamicArrayList *) malloc(sizeof(PersonDynamicArrayList));
+    (*list)->max = MAX_LIST;
+    (*list)->count = 0;
+    (*list)->data = (Person *) malloc(sizeof(Person));
+}
+
 void insert_first_DAL_2(PersonDynamicArrayList *list, Person p);
 void insert_last_DAL_2(PersonDynamicArrayList *list, Person p);
 void insert_at_DAL_2(PersonDynamicArrayList *list, Person p, int index);

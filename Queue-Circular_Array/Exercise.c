@@ -19,7 +19,7 @@ int get_queue_length(CircularArrayQueue list){
  *  Note: Use the queue basic operations (enqueue, dequeue, front)
 */
 PersonLinkedList get_all_females(CircularArrayQueue list){
-    PersonLinkedList femaleList = NULL,temp;
+    PersonLinkedList femaleList = NULL;
     Person personTemp;
     int x,queueSize = get_queue_length(list);
 
