@@ -6,7 +6,11 @@
  *  \brief Create an empty circular array queue.
 */
 CircularArrayQueue create_array_queue(){
-  
+    CircularArrayQueue new;
+    int x;
+    for(x = 0; x < MAX-1;x++){
+      
+    }
 }
 
 /** \fn void init_array_queue(CircularArrayQueue *list);
