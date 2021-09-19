@@ -88,17 +88,26 @@ void delete_last_DAL(PersonDynamicArrayList *list){
 
 void delete_by_city_DAL(PersonDynamicArrayList *list, String city){
     if(list->count > 0){
-        int x;
+        int x,y;
         for(x = 0; x < list->count && strcmp(list->data[x].city,city) != 0;x++){} // exits when city is found
         if(x != list->count){
-            
+            for(y = x; y < list->count;y++){
+                list->data[y] = list->data[y+1];
+            }
             list->count--;
         }
     }
 }
 
 
-void display_DAL(PersonDynamicArrayList list);
+void display_DAL(PersonDynamicArrayList list){
+    if(list.count > 0){
+        int x;
+        for(x = 0; x < list.count;x++){
+        displayPersonInfo(list.data[x]);
+        }
+    }
+}
 
 /* Dynamic Array List - v2 
  * Doubles the maximum size of the array when full.
