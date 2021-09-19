@@ -169,8 +169,16 @@ void delete_last_DAL_2(PersonDynamicArrayList *list){
     list->count--;
 }
 
-void delete_by_name_DAL_2(PersonDynamicArrayList *list, String name){
-    
+void delete_by_name_DAL_2(PersonDynamicArrayList *list, String name){ // last occurence
+    if(list->count > 0){
+        int x,y;
+        for(x = list->count; x > 0 && strcmp(list->data[x].name,name) != 0; x--){}
+        if(x > 0){
+            for(y = x; y < list->count;y++){
+                list->data[y] = list->data[y+1];
+            }
+        }
+    }
 }
 
 
@@ -260,9 +268,27 @@ void display_LL(PersonLinkedList list){
 
 
 /* Implement all VSpace conncept and Cusor Based List*/
-void init_vspace(VSpace *vs);
-Position alloc_space(VSpace *vs);
-void free_space(VSpace *vs, Position index);
+void init_vspace(VSpace *vs){
+    int x;
+    for(x = 0; x < MAX_VSPACE;x++){
+        vs->data[x].next = (x == MAX_VSPACE - 1)? -1: x+1;
+    }
+    vs->avail = 0;
+}
+Position alloc_space(VSpace *vs){
+    Position temp = vs->avail;
+    if(temp != -1){
+        vs->avail = vs->data[temp].next;
+    }
+    return temp;
+}
+
+void free_space(VSpace *vs, Position index){
+    if(index != -1 && index < MAX_VSPACE){
+        vs->data[index].next = vs->avail;
+        vs->avail = index;
+    }
+}
 void insert_first_CBL(VSpace *vs, PersonCusorBasedList *list, Person p);
 void insert_last_CBL(VSpace *vs, PersonCusorBasedList *list, Person p);
 void insert_at_CBL(VSpace *vs, PersonCusorBasedList *list, Person p, int index);
