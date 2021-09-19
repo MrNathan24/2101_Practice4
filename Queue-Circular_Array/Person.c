@@ -36,24 +36,45 @@ void init_DAL(PersonDynamicArrayList *list){
 
 void insert_first_DAL(PersonDynamicArrayList *list, Person p){
     int x;
-    if(list->count < list->max){
+    if(list->count >= list->max){
+        list->max *= 2;
+        list->data = realloc(list->data, list->max);
+    }else{
         //shif data to the right
         for(x = list->count; x > 0;x--){
             list->data[x] = list->data[x-1];   
         }
         list->data[0] = p;
         list->count++;
-    }else{
-        list->max *= 2;
-        list->data = realloc(list->data, list->max);
     }
 }
 
 void insert_last_DAL(PersonDynamicArrayList *list, Person p){
+    if(list->count >= list->max){
+        list->max *=2;
+        list->data = realloc(list->data,list->max);
+    }
+        list->data[list->count++] = p;
     
 }
-void insert_at_DAL(PersonDynamicArrayList *list, Person p, int index);
-void delete_first_DAL(PersonDynamicArrayList *list);
+
+void insert_at_DAL(PersonDynamicArrayList *list, Person p, int index){
+    if(index >= list->max){
+        list->max *=2;
+        list->data = realloc(list->data,list->max);
+    }else{
+        int x;
+        for(x = list->count; x > index; x--){
+            list->data[x] = list->data[x-1];
+        }
+        list->data[index] = p;
+        list->count++;
+    }
+}
+
+void delete_first_DAL(PersonDynamicArrayList *list){
+    
+}
 void delete_last_DAL(PersonDynamicArrayList *list);
 void delete_by_city_DAL(PersonDynamicArrayList *list, String city); // first ocurrence
 void display_DAL(PersonDynamicArrayList list);
