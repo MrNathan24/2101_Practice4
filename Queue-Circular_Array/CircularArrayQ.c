@@ -7,12 +7,6 @@
 */
 CircularArrayQueue create_array_queue(){
     CircularArrayQueue new;
-    int x;
-    for(x = 0; x < MAX-1;x++){
-      
-    }
-    new.front = 0;
-    new.rear = MAX-1;
     return new;
 }
 
