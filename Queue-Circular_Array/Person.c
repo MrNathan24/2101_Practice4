@@ -289,7 +289,10 @@ void free_space(VSpace *vs, Position index){
         vs->avail = index;
     }
 }
-void insert_first_CBL(VSpace *vs, PersonCusorBasedList *list, Person p);
+
+void insert_first_CBL(VSpace *vs, PersonCusorBasedList *list, Person p){
+    
+}
 void insert_last_CBL(VSpace *vs, PersonCusorBasedList *list, Person p);
 void insert_at_CBL(VSpace *vs, PersonCusorBasedList *list, Person p, int index);
 void delete_first_CBL(VSpace *vs, PersonCusorBasedList *list);
