@@ -69,12 +69,28 @@ void insert_last_LL(PersonLinkedList *list, Person p){
     PersonLinkedList *trav;
     PersonLinkedList temp = (PersonLinkedList) malloc(sizeof(PersonNode));
     if(temp != NULL){
-        
+        for(trav = list; *trav != NULL; trav = &(*trav)->next){}
+        temp->elem = p;
+        temp->next = *trav;
+        *trav = temp;
+    }    
+}
+
+void insert_after_LL(PersonLinkedList *list, Person p, String name){
+    PersonLinkedList *trav;
+    PersonLinkedList temp;
+
+    for(trav = list; *trav != NULL && strcmp((*trav)->elem.name,name) != 0 ; trav = &(*trav)->next){}
+    if(*trav != NULL){
+        temp->elem = p;
+        temp->next = (*trav)->next;
+        *trav = temp;
     }
+}
+
+void delete_first_LL(PersonLinkedList *list){
     
 }
-void insert_after_LL(PersonLinkedList *list, Person p, String name);
-void delete_first_LL(PersonLinkedList *list);
 void delete_last_LL(PersonLinkedList *list);
 void delete_by_city_LL(PersonLinkedList *list, String city); // all ocurrences
 void display_LL(PersonLinkedList list);
