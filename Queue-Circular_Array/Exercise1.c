@@ -44,15 +44,15 @@ PersonLinkedList get_all_females(CircularArrayQueue list){
 */
 PersonDynamicArrayList remove_all_males(CircularArrayQueue *list){
     PersonDynamicArrayList new;
-    init_DAL_2(&new);
+    init_DAL(&new);
 
     Person temp;
     while(list->front != list->rear){
       if(list->data[list->front].sex == 'M'){
         //remove from list
         temp = list->data[list->front];
-        list->front = (list->front + 1)% MAX;
         //add to dynamic arr list
+        list->front = (list->front + 1)% MAX;
         new.data[new.count++] = temp;
       }else{
          //remove from list and add to the rear
