@@ -14,9 +14,9 @@ int main(void){
     
     enqueue(&mylist,createPerson("Erika",'F',"Cebu"));
     enqueue(&mylist,createPerson("Cliford",'M',"Lapu-Lapu"));
-    enqueue(&mylist,createPerson("Rae",'M',"Cordova"));
+    enqueue(&mylist,createPerson("Rae",'F',"Cordova"));
     enqueue(&mylist,createPerson("Keasar",'M',"Bohol"));
-    enqueue(&mylist,createPerson("Hannah",'M',"Quezon"));
+    enqueue(&mylist,createPerson("Hannah",'F',"Quezon"));
 
 
     /* Display the linkedlist of females extracted from the circular array queue [used insert_first_LL()] */
@@ -24,14 +24,14 @@ int main(void){
     // personList = get_all_females(mylist);
     // display_LL(personList);
 
-
-    dynamicList = remove_all_males(&mylist);
     
+    dynamicList = remove_all_males(&mylist);
     // Display the newly created dynamic list
     display_DAL(dynamicList);       
 
+
     // Display the remaining list of Females
-    displayQueue(mylist);           
+    // displayQueue(mylist);           
     
     return 0;
 }
