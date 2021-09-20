@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include "Exercise1.c"
-#include "Person.c"
-#include "CircularArrayQ.c"
+#include "Exercise1.h"
+// #include "Person.h"
+// #include "CircularArrayQ.h"
 
 int main(void){
 
