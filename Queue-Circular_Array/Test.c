@@ -17,5 +17,6 @@ int main(void){
     enqueue(&mylist,createPerson("John",'M',"Quezon"));
     
     display_LL(get_all_females(mylist));
+    
     return 0;
 }
