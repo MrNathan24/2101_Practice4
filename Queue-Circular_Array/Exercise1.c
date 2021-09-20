@@ -22,7 +22,8 @@ PersonLinkedList get_all_females(CircularArrayQueue list){
     PersonLinkedList femaleList = NULL;
     Person personTemp;
     int x,queueSize = get_queue_length(list);
-
+    printf("The size of the queue is %d",queueSize);
+    
     for(x = 0; x < queueSize; x++,list.front = (list.front+1)%MAX){
       if(list.data[list.front].sex == 'F'){
         //add to linkedlist
