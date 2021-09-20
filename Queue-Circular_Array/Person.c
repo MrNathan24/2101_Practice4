@@ -105,6 +105,7 @@ void display_DAL(PersonDynamicArrayList list){
         int x;
         for(x = 0; x < list.count;x++){
         displayPersonInfo(list.data[x]);
+        printf("\n");
         }
     }
 }

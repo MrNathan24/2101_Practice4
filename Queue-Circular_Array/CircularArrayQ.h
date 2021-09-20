@@ -18,6 +18,8 @@ typedef struct {
 */
 CircularArrayQueue create_array_queue();
 
+void displayQueue(CircularArrayQueue myList);
+
 /** \fn void init_array_queue(CircularArrayQueue *list);
  *  \brief Initialize as an empty circular array queue.
  *  \param list The queue that needs to be initialize.

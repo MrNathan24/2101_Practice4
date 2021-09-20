@@ -2,6 +2,8 @@
 #define PERSON_H
 
 #include<stdlib.h>
+#include "CircularArrayQ.h"
+
 #define MAX_LIST 20
 #define MAX_VSPACE 30
 
@@ -12,6 +14,8 @@ typedef struct {
     char sex;
     String city;
 }Person;
+
+
 
 typedef struct {
     Person data[MAX_LIST];
@@ -45,6 +49,7 @@ typedef struct {
 
 Person createPerson(String name, char sex, String city);
 void displayPersonInfo(Person p);
+
 
 /* Static Array List*/
 void init_SAL(PersonStaticArrayList *list);

@@ -73,3 +73,12 @@ bool is_full(CircularArrayQueue list){
 Type front(CircularArrayQueue list){
   return list.data[list.front];
 }
+
+
+
+void displayQueue(CircularArrayQueue myList){
+    int x;
+    for(; myList.front != (myList.rear+1)%MAX; myList.front = (myList.front+1)%MAX){
+        printf(" %-15s | %-15c | %-15s \n",myList.data[myList.front].name,myList.data[myList.front].sex,myList.data[myList.front].city);
+    }
+}
