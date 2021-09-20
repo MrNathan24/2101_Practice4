@@ -10,7 +10,9 @@ int get_queue_length(CircularArrayQueue list){
     for(x = list.front; x != (list.rear +1)%MAX; x = (list.front+1) % MAX){
       count++;
     }
+
     return count;
+    
 }
 
 /** \fn PersonLinkedList get_all_females(CircularArrayQueue list);
@@ -21,9 +23,7 @@ int get_queue_length(CircularArrayQueue list){
 PersonLinkedList get_all_females(CircularArrayQueue list){
     PersonLinkedList femaleList = NULL;
     Person personTemp;
-    int x,queueSize = get_queue_length(list);
-    printf("The size of the queue is %d",queueSize);
-    
+    int x,queueSize = get_queue_length(list); 
     for(x = 0; x < queueSize; x++,list.front = (list.front+1)%MAX){
       if(list.data[list.front].sex == 'F'){
         //add to linkedlist
@@ -43,5 +43,16 @@ PersonLinkedList get_all_females(CircularArrayQueue list){
  *  Note: Use the concept of queue with out using the basic operations.
 */
 PersonDynamicArrayList remove_all_males(CircularArrayQueue *list){
+    PersonDynamicArrayList new;
 
+    while(list->front != list->rear){
+      if(list->data[list->front].sex == 'M'){
+        //remove from list
+        list->front = (list->front + 1)% MAX;
+        //add to dynamic arr list
+
+
+      }
+    }
+    return new;
 }

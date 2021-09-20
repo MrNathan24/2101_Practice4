@@ -25,7 +25,7 @@ void init_array_queue(CircularArrayQueue *list){
  *  \param list The current queue.
  *  \param p The person to be added in the queue.
 */
-bool enqueue(CircularArrayQueue *list, Type p){
+bool enqueue(CircularArrayQueue *list, Person p){
     int retval = 0;
     if(!is_full(*list)){
         list->rear = (list->rear + 1) % MAX;

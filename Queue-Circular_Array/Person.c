@@ -261,7 +261,8 @@ void delete_by_city_LL(PersonLinkedList *list, String city){
 }
 
 void display_LL(PersonLinkedList list){
-    for(;list != NULL;list = list->next){
+    PersonLinkedList trav;
+    for(trav = list;list != NULL;list = list->next){
         displayPersonInfo(list->elem);
     }
 }
