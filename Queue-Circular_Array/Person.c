@@ -187,6 +187,7 @@ void display_DAL_2(PersonDynamicArrayList list){
         int x;
         for(x = 0; x < list.count;x++){
         displayPersonInfo(list.data[x]);
+        
         }
     }
 }
@@ -262,8 +263,9 @@ void delete_by_city_LL(PersonLinkedList *list, String city){
 
 void display_LL(PersonLinkedList list){
     PersonLinkedList trav;
-    for(trav = list;list != NULL;list = list->next){
-        displayPersonInfo(list->elem);
+    for(trav = list;trav!= NULL;trav = trav->next){
+        displayPersonInfo(trav->elem);
+        printf("\n");
     }
 }
 

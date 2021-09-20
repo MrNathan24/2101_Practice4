@@ -7,7 +7,7 @@
 */
 int get_queue_length(CircularArrayQueue list){
     int x,count = 0;
-    for(x = list.front; x != (list.rear +1)%MAX; x = (list.front+1) % MAX){
+    for(;list.front != (list.rear +1)%MAX; list.front = (list.front+1) % MAX){
       count++;
     }
 
@@ -23,17 +23,19 @@ int get_queue_length(CircularArrayQueue list){
 PersonLinkedList get_all_females(CircularArrayQueue list){
     PersonLinkedList femaleList = NULL;
     Person personTemp;
-    int x,queueSize = get_queue_length(list); 
-    for(x = 0; x < queueSize; x++,list.front = (list.front+1)%MAX){
+    int originalRear = list.rear;  
+
+    while(list.front != (originalRear+1)%MAX){ // stop when list.front is equal to the original list.rear
       if(list.data[list.front].sex == 'F'){
-        //add to linkedlist
-          insert_first_LL(&femaleList,list.data[list.front]);
+          //add to linkedlist
+          insert_last_LL(&femaleList,list.data[list.front]);
+      }
           //remove from the queue and add again at the rear          
           personTemp = front(list);
           dequeue(&list);
           enqueue(&list,personTemp);
-      }
     }
+    
     return femaleList;
 }
 

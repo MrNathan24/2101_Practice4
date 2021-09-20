@@ -12,17 +12,20 @@ int main(void){
     PersonLinkedList personList = NULL;
     init_array_queue(&mylist);
     
-    // enqueue(&mylist,createPerson("Marc",'M',"Cebu"));
-    // enqueue(&mylist,createPerson("Cliford",'M',"Lapu-Lapu"));
+    enqueue(&mylist,createPerson("Erika",'F',"Cebu"));
+    enqueue(&mylist,createPerson("Cliford",'M',"Lapu-Lapu"));
     enqueue(&mylist,createPerson("Rae",'F',"Cordova"));
     enqueue(&mylist,createPerson("Keasar",'M',"Bohol"));
-    enqueue(&mylist,createPerson("John",'M',"Quezon"));
+    enqueue(&mylist,createPerson("Hannah",'F',"Quezon"));
 
-    // personList = get_all_females(mylist);
-    // display_LL(personList);
 
-    dynamicList = remove_all_males(&mylist);
-    display_DAL(dynamicList);
+    //Display the linkedlist of females extracted from the circular array queue
+    personList = get_all_females(mylist);
+    display_LL(personList);
+
+    //Display all the males removed from the circular array
+    // dynamicList = remove_all_males(&mylist);
+    // display_DAL(dynamicList);
     
     return 0;
 }
