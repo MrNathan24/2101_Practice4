@@ -11,7 +11,6 @@ int main(void){
     PersonDynamicArrayList dynamicList;
     PersonLinkedList personList = NULL;
     init_array_queue(&mylist);
-    init_DAL(&dynamicList);
     
     // enqueue(&mylist,createPerson("Marc",'M',"Cebu"));
     // enqueue(&mylist,createPerson("Cliford",'M',"Lapu-Lapu"));
