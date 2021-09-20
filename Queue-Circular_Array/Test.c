@@ -9,7 +9,7 @@ int main(void){
     // To do code logic here.
     CircularArrayQueue mylist = create_array_queue();
     PersonDynamicArrayList dynamicList;
-    PersonLinkedList personList = NULL;
+    PersonLinkedList personList;
     init_array_queue(&mylist);
     
     enqueue(&mylist,createPerson("Erika",'F',"Cebu"));
@@ -19,9 +19,9 @@ int main(void){
     enqueue(&mylist,createPerson("Hannah",'F',"Quezon"));
 
 
-    //Display the linkedlist of females extracted from the circular array queue
-    personList = get_all_females(mylist);
-    display_LL(personList);
+    //Display the linkedlist of females extracted from the circular array queue [used insert_first_LL()]
+    // personList = get_all_females(mylist);
+    // display_LL(personList);
 
     //Display all the males removed from the circular array
     // dynamicList = remove_all_males(&mylist);

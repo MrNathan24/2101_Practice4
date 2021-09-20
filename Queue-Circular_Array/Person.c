@@ -194,17 +194,15 @@ void display_DAL_2(PersonDynamicArrayList list){
 
 /* Singly Linked List */
 void insert_first_LL(PersonLinkedList *list, Person p){
-    PersonLinkedList *trav;
     PersonLinkedList temp = (PersonLinkedList) malloc(sizeof(PersonNode));
 
     if(temp != NULL){
-        for(trav = list; *trav != NULL; trav = &(*trav)->next){
             temp->elem = p;
-            temp->next = *trav;
-            *trav = temp;
-        }
+            temp->next = *list;
+            *list = temp;
     }
 }
+
 
 
 void insert_last_LL(PersonLinkedList *list, Person p){
