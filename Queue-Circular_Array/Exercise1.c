@@ -49,10 +49,9 @@ PersonDynamicArrayList remove_all_males(CircularArrayQueue *list){
     Person temp;
     while(list->front != list->rear){
       if(list->data[list->front].sex == 'M'){
-        //remove from list
+        //store data to temp
         temp = list->data[list->front];
-        //add to dynamic arr list
-        list->front = (list->front + 1)% MAX;
+        //remove from list
         new.data[new.count++] = temp;
       }else{
          //remove from list and add to the rear
@@ -60,6 +59,7 @@ PersonDynamicArrayList remove_all_males(CircularArrayQueue *list){
         list->rear = (list->rear + 1)% MAX;
         list->data[list->rear] = temp;
       }
+        list->front = (list->front + 1)% MAX;
     }
     return new;
 }
